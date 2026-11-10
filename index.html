@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Harnoor Mam Ji 💌</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #fdf5f7;
+      --card-bg: #ffffff;
+      --accent-pink: #ff85a2;
+      --deep-pink: #e64980;
+      --text-main: #33272a;
+      --text-muted: #594a4e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #ffeef2, #fbf0f4 60%, #f6e6ed);
+      font-family: 'Nunito', sans-serif;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 18px 12px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 440px;
+      position: relative;
+    }
+
+    .screen {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 28px;
+      box-shadow: 0 16px 40px rgba(230, 73, 128, 0.12);
+      border: 2px solid rgba(255, 182, 193, 0.5);
+      padding: 30px 22px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .art-img {
+      max-width: 220px;
+      width: 80%;
+      height: auto;
+      margin: 0 auto 18px auto;
+      display: block;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.06));
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--deep-pink);
+      font-size: 1.55rem;
+      line-height: 1.35;
+      margin-bottom: 22px;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 28px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+
+    .btn:active {
+      transform: scale(0.96);
+    }
+
+    .btn-yes {
+      background: linear-gradient(135deg, #ff85a2, #f06595);
+      color: #fff;
+    }
+
+    .btn-no {
+      background: #f1f3f5;
+      color: #495057;
+      border: 1.5px solid #dee2e6;
+    }
+
+    .btn-retry {
+      background: linear-gradient(135deg, #f06595, #d6336c);
+      color: #fff;
+      padding: 12px 30px;
+      font-size: 1.05rem;
+    }
+
+    /* Screen 3: Letter Section */
+    .letter-card {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+      border: 2px solid #ccd8e6;
+      background-color: #fff;
+      background-image: url('letter-bg.jpg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      padding: 70px 28px 75px 28px;
+      min-height: 600px;
+    }
+
+    .letter-content {
+      font-family: 'Caveat', cursive;
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: #2b2b2b;
+      white-space: pre-line;
+      text-align: left;
+      max-height: 480px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .letter-content::-webkit-scrollbar {
+      width: 5px;
+    }
+    .letter-content::-webkit-scrollbar-thumb {
+      background: #ced4da;
+      border-radius: 10px;
+    }
+
+    .next-btn-container {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .btn-next {
+      background: linear-gradient(135deg, #ff85a2, #f06595);
+      color: #fff;
+      font-size: 1.1rem;
+      padding: 14px 30px;
+      width: 100%;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(240, 101, 149, 0.35);
+    }
+
+    /* Screen 4: Music Player */
+    .music-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 34px 22px;
+      text-align: center;
+      border: 2px solid rgba(255, 182, 193, 0.6);
+      box-shadow: 0 16px 40px rgba(230, 73, 128, 0.12);
+    }
+
+    .big-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.65rem;
+      color: var(--deep-pink);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .sub-heading {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      color: #495057;
+      font-size: 1.25rem;
+      margin-bottom: 24px;
+    }
+
+    .vinyl-wrapper {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 24px auto;
+    }
+
+    .vinyl {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, #212529 35%, #000 70%);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spin 6s linear infinite;
+      animation-play-state: paused;
+    }
+
+    .vinyl.playing {
+      animation-play-state: running;
+    }
+
+    .vinyl-center {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #ff85a2;
+      border: 3px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .audio-player-box {
+      margin-bottom: 24px;
+    }
+
+    audio {
+      width: 100%;
+      height: 40px;
+      border-radius: 20px;
+    }
+
+    .sign-box {
+      margin-top: 15px;
+      background: #fff0f5;
+      padding: 12px 18px;
+      border-radius: 16px;
+      border: 1.5px dashed #ffa8ba;
+      font-size: 1.1rem;
+      color: #c2255c;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Audio Element -->
+  <audio id="bgSong" loop preload="auto">
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    
+    <!-- Screen 1: Initial Question -->
+    <div id="screen1" class="screen active">
+      <div class="card">
+        <img src="cat-letter.jpg" alt="Cat holding letter" class="art-img">
+        <h1>Do you want to see the letter?</h1>
+        <div class="btn-row">
+          <button class="btn btn-yes" onclick="goToScreen(3)">Yes 💖</button>
+          <button class="btn btn-no" onclick="goToScreen(2)">No 😿</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 2: No Screen -->
+    <div id="screen2" class="screen">
+      <div class="card">
+        <img src="crying-emoji.jpg" alt="Crying emoji" class="art-img">
+        <h2 style="font-size: 1.25rem;">don't you love me kammo ji 😭? Why did you choose no? Chlo yes kroo jldi jldi 😭 plz</h2>
+        <div class="btn-row">
+          <button class="btn btn-retry" onclick="goToScreen(1)">Try Again 🔄😿</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 3: The Personal Letter -->
+    <div id="screen3" class="screen">
+      <div class="letter-card">
+        <div class="letter-content">Hlo meri achi achi harnoor mam ji 🦜✨ . Mujhe nah ye letter wagera likhne noi aati but let me try for you 😭
+
+Toh dekhiye mam ji Ik ki me aapka bohot mood kharab krdeta hu aapse shyd ache se baat bhi ni krta aapko Happiee happie bhi noi rkhta bs gussa dilwata rehta hu humesha 😭 aur faltu ki harkatien krta rehta hu humesha 😭 aur bs aapko gussa dilwata hu aapka mood off krdeta hu pr nhh me nah schi mei aapse zyada ache se kisise baat noi krta 😭 aur aapka mood bhi intentionally kharab noi krta 🙂‍↕️ woh pta ni kaise krdeta hu me toh humesha sochta hu ki you se achi achi baatein krunga bohot bohot zyada baatein krunga pr phir aapka mood kharab krdeta hu 😭😭 uske liye nah bohot bohot saari sorry aapse 🙇🏻 me toh aapka acha acha sa bhondu sa bchu hu nah 👉🏻👈🏻 isliye mujhe maaf krdena uske liye 😋✨ pr me try krta hu ki na kru pr me seekh jaunga you ko happy happy krne ke tarikeeeeeeee 🙇🏻 phir aapka mood kharab noi hoga zyada 😭 aur nah ek aur cheez you nah mere se gussa hojao naraz hojao ya humari ladai hojaye kch bhi hojaye you mereko maar lena kch bhi krlena bs msg Krna bnd mat Krna plmzzz 😭✨ gaali bhi chlegi bs msg krte rehna 🙇🏻 aur mujhe ye hmm hmm se bohot lgta hai mujhe nah meri talktive aur mastikhor wali harnoor mam achi lgti hai ye sad wali hmm hmm bolne wali mam ji bhi achi hai pr harnoor aise zyada achi noi lgti i love youu so mchhh youu khush khush Raha kriye bs 😋🫶🏻 me bhi aapka mood kam hi kharab krunga dhire dhire you ko khush krne ke tarikeeeeeeee seekh lunga 😋🫶🏻 aur ache se baat Krna bhi seekh lunga 😭☝🏻 baaki i love you so mch 😭✨ but that doesn't mean ki aap mereko hi banda bna lo it totally depends on you aap kisi bhi ache ladke ko bna skti hai 🙇🏻 bs mujhe noi bhulna mujhe mujhe nah aapko bandi bnane ka bohot Mann krta hai mera pehle mann ni tha kisi ko bhi girlfriend wagera bnane ka 😭☝🏻 pr nah it was like ki me bs kisi ko hurt noi Krna chahta me noi chahta ki me sad krdu time na de pau trust na tod di aur looks insecurity jo mujhe humesha se hai me acha bhi noi dikhta isliye bs pr me you ko bohot psnd krta hu 😋🫶🏻✨ me ache se baat wagera bhi Krna seekh lunga 😭☝🏻 aur uh ko happy rkhna bhi 🙇🏻 you to meri pyaari pyaari kammo ji ho 😭✨ you bs khush Raha kriye bohot ache lgte ho aur nh sorry if I ever made you gussa aur kch bhi kiya ho toh sbke liye sorry me toh off wagera toh noi jaane wala tha pr aapko boldiya tha kyuki Mera nah thoda mood kharab hogya tha 😭☝🏻 aur agr me reply wagera nhi deta ya online nhi aata toh shyd aapka bhi hojata isliye maine aisa boldiya ki me off jaara hu pr me off chla gya toh aapse baat kiye bina pura din kharab chle jayega 😭🛐 isliye me off wagera toh noi jaara aur nh i love youuu so mchhhhh mereko ache se kaise bolna hota hai woh toh nhi pta pr i love you 😋🫶🏻 bohot saara . Aap nah mereko block bhi kr skti ho agr ye letter wali harkat buri lge toh but nh bs mereko bta ke Krna 😭☝🏻 pichli baar toh maine bohot koshish kri aapki I'd bhi ni milti kahi pr na msg kr skta tha woh toh bs acha hua ki aapne unblock krdiya 🛐✨ baaki toh bs itna hi tha mam jiii i love you so mchhhhh 🧿🎀 hehe
+
+And again sry for anything I've done and love you toh hai hi meri cutie ko bohot saara 😋🫶🏻✨
+
+I hope aapko acha lge nh lge toh maaf krdena 🙂‍↕️</div>
+      </div>
+      <div class="next-btn-container">
+        <button class="btn btn-next" onclick="goToScreen(4)">One last thing for you... 🎵✨</button>
+      </div>
+    </div>
+
+    <!-- Screen 4: Dedicated Song -->
+    <div id="screen4" class="screen">
+      <div class="music-card">
+        <img src="cat-tulips.jpg" alt="Cat with flowers" class="art-img" style="max-width: 140px; margin-bottom: 12px;">
+        <h1 class="big-heading">I love you kammo ji 🌷🫶🏻✨</h1>
+        <div class="sub-heading">Tainu sang rakhna humeshaaa 🛐✨</div>
+
+        <div class="vinyl-wrapper">
+          <div id="vinylDisc" class="vinyl">
+            <div class="vinyl-center">🎵</div>
+          </div>
+        </div>
+
+        <div class="audio-player-box">
+          <audio id="audioControl" controls loop style="width: 100%;">
+            <source src="song.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+
+        <div class="sign-box">
+          You ka bhondu akhil 🫶🏻
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const song = document.getElementById('bgSong');
+    const audioControl = document.getElementById('audioControl');
+    const vinyl = document.getElementById('vinylDisc');
+
+    function goToScreen(num) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      const nextScreen = document.getElementById('screen' + num);
+      if (nextScreen) nextScreen.classList.add('active');
+
+      if (num === 4) {
+        audioControl.play().then(() => {
+          vinyl.classList.add('playing');
+        }).catch(() => {
+          // If browser restricts autoplay, user can tap play on audio controls
+        });
+      }
+    }
+
+    audioControl.addEventListener('play', () => vinyl.classList.add('playing'));
+    audioControl.addEventListener('pause', () => vinyl.classList.remove('playing'));
+  </script>
+</body>
+</html>
